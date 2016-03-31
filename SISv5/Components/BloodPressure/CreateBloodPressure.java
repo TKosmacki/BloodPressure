@@ -171,7 +171,7 @@ public class CreateBloodPressure {
 		
 		switch (messageType) {
 		case "Alert":
-			    System.out.println("BloodPressure received, start processing...");
+           System.out.println("BloodPressure received, start processing...");
            String alertMsgAboutBP = "Complex Alert!";
            
            String systString = kvList.getValue("Systolic");
@@ -200,28 +200,6 @@ public class CreateBloodPressure {
                    dias = 0;
                }
            }
-           // 140/90, 120/80 this is for demo purposes
-           boolean emer = false;
-           if(syst > 140 || dias > 90)
-           {
-               alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
-               emer = true;
-           }
-           else if(syst < 120 || dias < 80)
-           {
-               alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
-               emer = true;
-           }
-           if(emer == true){
-               System.out.println("========= Send out Emergency message =========");
-           
-               emergency.putPair("MainComponent", "BloodPressure");
-              // emergency.putPair("AuxComponents", "Temp");
-               emergency.putPair("Note", alertMsgAboutBP);
-               emergency.putPair("Date", System.currentTimeMillis() + "");
-           
-               encoder.sendMsg(emergency);
-           }
 		   break;
 		case "Confirm":
 			System.out.println("Connect to SISServer successful. Boss.");
@@ -233,7 +211,7 @@ public class CreateBloodPressure {
                 System.out.println("Message Purpose: " + purpose);
 				switch (purpose) {
 					
-					 case "Activate":
+					case "Activate":
                     String rRate = kvList.getValue("RefreshRate");
                     String sDate = kvList.getValue("StartDate");
                     String eDate = kvList.getValue("EndDate");
