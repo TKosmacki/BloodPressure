@@ -39,7 +39,7 @@ public class CreateBloodPressure {
 
 	// summary for all incoming / outgoing messages
 	private static final String incomingMessages = "IN\tConfirm|Setting:Kill|!incomingMessages!";
-	private static final String outgoingMessages = "OUT\t Connect|Emergency";
+	private static final String outgoingMessages = "OUT\t Connect|Emergency|Alert";
 	
 	private static int refreshRate = 500, max = 40, min = 15;
     private static Date startDate = new Date(), endDate = new Date();
@@ -120,7 +120,6 @@ public class CreateBloodPressure {
 	}
 	
 	private static void initRecord() {
-
 		emergency.putPair("Scope", SCOPE);
 		emergency.putPair("MessageType", "Emergency");
 		emergency.putPair("Sender", NAME);
@@ -130,6 +129,54 @@ public class CreateBloodPressure {
 		// to set here
 		emergency.putPair("Receiver", "BloodPressure");
 	}
+    
+    /*private static void componentTask(syst,dias,age,sex){
+        if (sex.equals("Male")){
+            if (age >= 15 && age <= 18){
+            }
+            if (age >= 19 && age <= 24){
+            }
+            if (age >= 25 && age <= 29){
+            }
+            if (age >= 30 && age <= 35){
+            }
+            if (age >= 36 && age <= 39){
+            }
+            if (age >= 40 && age <= 45){
+            }
+            if (age >= 46 && age <= 49){
+            }
+            if (age >= 50 && age <= 55){
+            }
+            if (age >= 56 && age <= 59){
+            }
+            if (age >= 60){
+            }
+        }
+        else{
+            if (age >= 15 && age <= 18){
+            }
+            if (age >= 19 && age <= 24){
+            }
+            if (age >= 25 && age <= 29){
+            }
+            if (age >= 30 && age <= 35){
+            }
+            if (age >= 36 && age <= 39){
+            }
+            if (age >= 40 && age <= 45){
+            }
+            if (age >= 46 && age <= 49){
+            }
+            if (age >= 50 && age <= 55){
+            }
+            if (age >= 56 && age <= 59){
+            }
+            if (age >= 60){
+            }
+        }
+    }*/
+
 
 	/*
 	 * process a certain message, execute corresponding actions
@@ -170,13 +217,15 @@ public class CreateBloodPressure {
 		String purpose = kvList.getValue("Purpose");
 		
 		switch (messageType) {
-		case "Alert":
+		case "Reading":
            System.out.println("BloodPressure received, start processing...");
-           String alertMsgAboutBP = "Complex Alert!";
-           
            String systString = kvList.getValue("Systolic");
            String diasString = kvList.getValue("Diastolic");
-           int syst = 0, dias = 0;
+           String ageString = kvList.getValue("Age");
+           
+           String gender = kvList.getValue("Gender");
+           int syst = 0, dias = 0, age = 0;
+            
            if (systString != null && !systString.equals(""))
            {
                try
@@ -200,6 +249,19 @@ public class CreateBloodPressure {
                    dias = 0;
                }
            }
+           if (ageString != null && !ageString.equals(""))
+           {
+               try
+               {
+                   age = Integer.parseInt(ageString);
+               }
+               catch(Exception e)
+               {
+                   age = 0;
+               }
+           }
+           //contains the knowledge base which does the necessary calculations
+           //componentTask(syst,dias,age,gender);
 		   break;
 		case "Confirm":
 			System.out.println("Connect to SISServer successful. Boss.");
