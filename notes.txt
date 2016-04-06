@@ -1,0 +1,3 @@
+make a reading message type
+part of the reading should include input variables into our knowledge base, like age and diabetes and maybe other variables like that
+can repurpose this in the alert messsage type
