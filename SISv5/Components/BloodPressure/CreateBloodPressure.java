@@ -222,8 +222,14 @@ public class CreateBloodPressure {
            String systString = kvList.getValue("Systolic");
            String diasString = kvList.getValue("Diastolic");
            String ageString = kvList.getValue("Age");
-           
            String sex = kvList.getValue("SEX");
+          
+           /*
+           		Incase we decide to include weight into out XML
+				String weightString = kvList.getValue("Weight");
+           	*/
+
+
            int syst = 0, dias = 0, age = 0;
             
            if (systString != null && !systString.equals(""))
@@ -260,6 +266,21 @@ public class CreateBloodPressure {
                    age = 0;
                }
            }
+
+           /* Function to be commented out if we include weight
+           if (weightString != null && !weightString.equals(""))
+           {
+               try
+               {
+                   weight = Integer.parseInt(weightString);
+               }
+               catch(Exception e)
+               {
+                   weight = 0;
+               }
+           }
+           */
+
            //contains the knowledge base which does the necessary calculations
            //componentTask(syst,dias,age,gender);
 		   break;
