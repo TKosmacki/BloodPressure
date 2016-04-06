@@ -223,7 +223,7 @@ public class CreateBloodPressure {
            String diasString = kvList.getValue("Diastolic");
            String ageString = kvList.getValue("Age");
            
-           String gender = kvList.getValue("Gender");
+           String sex = kvList.getValue("SEX");
            int syst = 0, dias = 0, age = 0;
             
            if (systString != null && !systString.equals(""))
