@@ -451,7 +451,12 @@ public class CreateBloodPressure {
             emergency.putPair("MainComponent", "BloodPressure");
             emergency.putPair("Note", alertMsgAboutBP);
             emergency.putPair("Date", System.currentTimeMillis() + "");
-            encoder.sendMsg(emergency);
+            
+            try{
+                encoder.sendMsg(emergency);
+             }catch(IOException ioe){
+              System.out.println("Error Sending Emergency Message.");
+              }
 
             System.out.println("========= Sending Reading To Your Doctor =========");
             //We can be pretty and print out the alert message in our terminal
@@ -459,7 +464,13 @@ public class CreateBloodPressure {
             alert.putPair("Diastolic", Integer.toString(dias));
             alert.putPair("Pulse", "90");
             alert.putPair("Date", System.currentTimeMillis() + "");
-            encoder.sendMsg(alert);
+
+
+            try{
+                encoder.sendMsg(alert);
+             }catch(IOException ioe){
+              System.out.println("Error Sending Alert Message.");
+              }
 
            }
 
@@ -478,7 +489,11 @@ public class CreateBloodPressure {
             alert.putPair("Diastolic", Integer.toString(dias));
             alert.putPair("Pulse", "90");
             alert.putPair("Date", System.currentTimeMillis() + "");
-            encoder.sendMsg(alert);
+            try{
+                encoder.sendMsg(alert);
+             }catch(IOException ioe){
+              System.out.println("Error Sending Alert Message.");
+              }
              System.out.println("========= Thank You For Checking Your BloodPressure =========");
             }
             else{
