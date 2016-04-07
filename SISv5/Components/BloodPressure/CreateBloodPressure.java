@@ -139,11 +139,12 @@ public class CreateBloodPressure {
     alert.putPair("Purpose", "BloodPressureAlert");
 	}
     
-    /* private static void componentTask(syst,dias,age,sex){
-       boolean emer, alert;
+     private static void componentTask(int syst,int dias,int age,String sex){
+       boolean emer;
+       String alertMsgAboutBP = "";
 
        emer = false;
-       alert= false;
+       
 
        
         // Constructed using elseif statements to follow the rule
@@ -454,9 +455,9 @@ public class CreateBloodPressure {
 
             System.out.println("========= Sending Reading To Your Doctor =========");
             //We can be pretty and print out the alert message in our terminal
-            alert.putPair("Systolic", sex);
-            alert.putPair("Diastolic", dias);
-            alert.putPair("Pulse", 90);
+            alert.putPair("Systolic", Integer.toString(syst));
+            alert.putPair("Diastolic", Integer.toString(dias));
+            alert.putPair("Pulse", "90");
             alert.putPair("Date", System.currentTimeMillis() + "");
             encoder.sendMsg(alert);
 
@@ -473,9 +474,9 @@ public class CreateBloodPressure {
              
             System.out.println("========= Sending Reading To Your Doctor =========");
             //We can be pretty and print out the alert message in our terminal
-            alert.putPair("Systolic", sex);
-            alert.putPair("Diastolic", dias);
-            alert.putPair("Pulse", 90);
+            alert.putPair("Systolic", Integer.toString(syst));
+            alert.putPair("Diastolic", Integer.toString(dias));
+            alert.putPair("Pulse", "90");
             alert.putPair("Date", System.currentTimeMillis() + "");
             encoder.sendMsg(alert);
              System.out.println("========= Thank You For Checking Your BloodPressure =========");
@@ -486,7 +487,7 @@ public class CreateBloodPressure {
             }
 
         }
-    } */ 
+    } 
 
 
 	/*
@@ -593,7 +594,7 @@ public class CreateBloodPressure {
            */
 
            //contains the knowledge base which does the necessary calculations
-           //componentTask(syst,dias,age,gender);
+           componentTask(syst,dias,age,sex);
 		   break;
 		case "Confirm":
 			System.out.println("Connect to SISServer successful. Boss.");
