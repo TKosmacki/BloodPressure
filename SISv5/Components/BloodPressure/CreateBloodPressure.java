@@ -438,6 +438,54 @@ public class CreateBloodPressure {
 
             }
         }
+          if(emer == true){
+             
+                //I believe that we should send an alert message to the doctor whenever there is an
+                //emergency. The SIS server handles the messages differently in CreateUploader.java
+                //If we only send an emergency, the readings are not passed through the message function, 
+                //and if we only send alert, then the note/emergency message is not passed to the "database"
+            
+            System.out.println("========= Sending  out Emergency message =========");
+            //We can be pretty and print out the emergency message in our terminal
+            emergency.putPair("MainComponent", "BloodPressure");
+            emergency.putPair("Note", alertMsgAboutBP);
+            emergency.putPair("Date", System.currentTimeMillis() + "");
+            encoder.sendMsg(emergency);
+
+            System.out.println("========= Sending Reading To Your Doctor =========");
+            //We can be pretty and print out the alert message in our terminal
+            alert.putPair("Systolic", sex);
+            alert.putPair("Diastolic", dias);
+            alert.putPair("Pulse", 90);
+            alert.putPair("Date", System.currentTimeMillis() + "");
+            encoder.sendMsg(alert);
+
+           }
+
+        if(emer != true){
+            
+            Scanner scan = new Scanner(System.in);
+            System.out.println("=== Your Blood Pressure is Fine. Would you like to send to doctor?(Y/N) ");
+            String s = scan.next();
+            s = s.toLowerCase();
+
+            if(s.equals("y")){
+             
+            System.out.println("========= Sending Reading To Your Doctor =========");
+            //We can be pretty and print out the alert message in our terminal
+            alert.putPair("Systolic", sex);
+            alert.putPair("Diastolic", dias);
+            alert.putPair("Pulse", 90);
+            alert.putPair("Date", System.currentTimeMillis() + "");
+            encoder.sendMsg(alert);
+             System.out.println("========= Thank You For Checking Your BloodPressure =========");
+            }
+            else{
+                System.out.println("========= Thank You For Checking Your BloodPressure =========");
+                System.out.println("========= Please Keep Track of Your BloodPressure for Future Reference =========");
+            }
+
+        }
     } */ 
 
 
