@@ -14,9 +14,9 @@ Age Case:
 
 
 BloodPressureReading0
-	Male - Age Case:0
+	Male - Age Case:0 Healthy
 BloodPressureReading1
-	Male - Age Case:1
+	Male - Age Case:0 UnHealthy
 BloodPressureReading2
 	Male - Age Case:2
 BloodPressureReading3

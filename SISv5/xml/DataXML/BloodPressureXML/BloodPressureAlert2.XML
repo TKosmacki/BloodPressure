@@ -23,15 +23,27 @@
 	</Item>
 	<Item>
 		<Key>Systolic</Key>
-		<Value>100</Value>
+		<Value>120</Value>
 	</Item>
 	<Item>
 		<Key>Diastolic</Key>
-		<Value>90</Value>
+		<Value>85</Value>
 	</Item>
 	<Item>
 		<Key>Pulse</Key>
 		<Value>95</Value>
+	</Item>
+	<Item>
+		<Key>Sex</Key>
+		<Value>Male</Value>
+	</Item>
+	<Item>
+		<Key>Age</Key>
+		<Value>16</Value>
+	</Item>
+	<Item>
+		<Key>Weight</Key>
+		<Value>195</Value>
 	</Item>
 	<Item>
 		<Key>Date</Key>

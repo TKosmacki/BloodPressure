@@ -155,7 +155,7 @@ public class CreateBloodPressure {
         if (sex.equals("Male")){
             if (age >= 15 && age <= 18){
 
-               // 130/95 97/75 this is for demo purposes
+               // 120/85 Healthy 
                if(syst > 130 || dias > 95)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -544,12 +544,12 @@ public class CreateBloodPressure {
 		String purpose = kvList.getValue("Purpose");
 		
 		switch (messageType) {
-		case "Reading":
+		case "Alert":
            System.out.println("BloodPressure received, start processing...");
            String systString = kvList.getValue("Systolic");
            String diasString = kvList.getValue("Diastolic");
            String ageString = kvList.getValue("Age");
-           String sex = kvList.getValue("SEX");
+           String sex = kvList.getValue("Sex");
           
            /*
            		Incase we decide to include weight into out XML

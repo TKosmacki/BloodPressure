@@ -14,12 +14,16 @@
 		<Value>BloodPressure</Value>
 	</Item>
 	<Item>
+		<Key>Receiver</Key>
+		<Value>BloodPressure</Value>
+	</Item>
+	<Item>
 		<Key>Systolic</Key>
-		<Value>100</Value>
+		<Value>120</Value>
 	</Item>
 	<Item>
 		<Key>Diastolic</Key>
-		<Value>90</Value>
+		<Value>85</Value>
 	</Item>
 	<Item>
 		<Key>Pulse</Key>

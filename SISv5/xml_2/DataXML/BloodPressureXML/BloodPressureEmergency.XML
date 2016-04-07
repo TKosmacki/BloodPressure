@@ -7,14 +7,10 @@
 	</Item>
 	<Item>
 		<Key>MessageType</Key>
-		<Value>Alert</Value>
+		<Value>Emergency</Value>
 	</Item>
 	<Item>
 		<Key>Sender</Key>
-		<Value>BloodPressure</Value>
-	</Item>
-	<Item>
-		<Key>Receiver</Key>
 		<Value>BloodPressure</Value>
 	</Item>
 	<Item>
@@ -23,7 +19,7 @@
 	</Item>
 	<Item>
 		<Key>Systolic</Key>
-		<Value>100</Value>
+		<Value>150</Value>
 	</Item>
 	<Item>
 		<Key>Diastolic</Key>

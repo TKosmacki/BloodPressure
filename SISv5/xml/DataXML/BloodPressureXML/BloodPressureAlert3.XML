@@ -34,6 +34,18 @@
 		<Value>95</Value>
 	</Item>
 	<Item>
+		<Key>Sex</Key>
+		<Value>Male</Value>
+	</Item>
+	<Item>
+		<Key>Age</Key>
+		<Value>16</Value>
+	</Item>
+	<Item>
+		<Key>Weight</Key>
+		<Value>195</Value>
+	</Item>
+	<Item>
 		<Key>Date</Key>
 		<Value>1435437191150</Value>
 	</Item>
