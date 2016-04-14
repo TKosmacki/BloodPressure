@@ -503,6 +503,7 @@ public class CreateBloodPressure {
            //and if we only send alert, then the note/emergency message is not passed to the "database".
            
            System.out.println("========= Sending  out Emergency message =========");
+           System.out.println(alertMsgAboutBP);
            //We can be pretty and print out the emergency message in our terminal
            emergency.putPair("MainComponent", "BloodPressure");
            emergency.putPair("Note", alertMsgAboutBP);
