@@ -54,7 +54,6 @@ public class CreateBloodPressure {
 	//initialCode
 	static String alert_msg = "Patient has abnormal bloodPressure ";
 	static String doctorEmail = "sisfortest@outlook.com"; // default email
-	//static ArrayList<Double> tempRecord = new ArrayList<Double>();
 
 	/*
 	 * Main program
@@ -125,36 +124,28 @@ public class CreateBloodPressure {
 		emergency.putPair("Scope", SCOPE);
 		emergency.putPair("MessageType", "Emergency");
 		emergency.putPair("Sender", NAME);
-		//Checking our uploader, this purpose will never be used, but it doesn't hurt to add it
-		//emergency.putPair("Purpose", "BloodPressureAlert");
 
 		// Receiver may be different for each message, so it doesn't make sense
-		// to set here  Will not need a receiver for emergency since our SIS.scope 
+		// to set here.  We will not need a receiver for emergency since our SIS.scope 
 		// handles this message type by sending it to the upLoader
-		//emergency.putPair("Receiver", "BloodPressure");
 
 		alert.putPair("Scope", SCOPE);
 		alert.putPair("MessageType", "Alert");
 		alert.putPair("Sender", NAME);
-		//Checking our uploader, this purpose will never be used FOR OUR APPLICATION, but it doesn't hurt to add it
 		alert.putPair("Purpose", "BloodPressureAlert");
 	}
-    
-     public static boolean componentTask(int syst,int dias,int age,String sex){
-       boolean emer;
 
-       emer = false;
-       
-
-       
+    public static boolean componentTask(int syst,int dias,int age,String sex) {
+        
+        boolean emer;
+        emer = false;
+              
         // Constructed using elseif statements to follow the rule
         // that, "Once an else if succeeds, none of the remaining else if's or else's
         // will be tested" 
-        
 
         if (sex.equals("Male")){
             if (age >= 15 && age <= 18){
-
                // 130/95 97/75 this is for demo purposes
                if(syst > 130 || dias > 95)
                {
@@ -169,8 +160,6 @@ public class CreateBloodPressure {
 
             }
             else if (age >= 19 && age <= 24){
-              
-          
                if(syst > 130 || dias > 89)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -184,8 +173,6 @@ public class CreateBloodPressure {
 
             }
             else if (age >= 25 && age <= 29){
-
-
                if(syst > 131 || dias > 90)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -199,7 +186,6 @@ public class CreateBloodPressure {
 
             }
             else if (age >= 30 && age <= 35){
-
               if(syst > 133 || dias > 92)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -213,7 +199,6 @@ public class CreateBloodPressure {
 
             }
             else if (age >= 36 && age <= 39){
-
               if(syst > 134 || dias > 93)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -224,10 +209,8 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 40 && age <= 45){
-
               if(syst > 135 || dias > 93)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -238,10 +221,8 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 46 && age <= 49){
-
               if(syst > 137 || dias > 94)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -252,10 +233,8 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 50 && age <= 55){
-
               if(syst > 138 || dias > 95)
                {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too high!!!";
@@ -266,7 +245,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 56 && age <= 59){
               //131/87
@@ -280,7 +258,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 60){
               //135/88
@@ -294,7 +271,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
         }
         else{
@@ -310,7 +286,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 19 && age <= 24){
               //120/79
@@ -324,7 +299,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 25 && age <= 29){
               //120/80
@@ -338,7 +312,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 30 && age <= 35){
               //122/81
@@ -352,7 +325,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 36 && age <= 39){
               //123/82
@@ -366,7 +338,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 40 && age <= 45){
               //124/83
@@ -394,7 +365,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 50 && age <= 55){
               //129/85
@@ -408,7 +378,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 56 && age <= 59){
               //130/86
@@ -422,7 +391,6 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
             else if (age >= 60){
               //134/84
@@ -436,12 +404,10 @@ public class CreateBloodPressure {
                    alertMsgAboutBP = "The Patient's Blood Pressure is too low!!!";
                    emer = true;
                }
-
             }
         }
         return emer;   
     } 
-
 
 	/*
 	 * process a certain message, execute corresponding actions
@@ -482,19 +448,13 @@ public class CreateBloodPressure {
 		String purpose = kvList.getValue("Purpose");
 		
 		switch (messageType) {
-		case "Reading":
+		case "Alert":
            System.out.println("BloodPressure received, start processing...");
            String systString = kvList.getValue("Systolic");
            String diasString = kvList.getValue("Diastolic");
            String ageString = kvList.getValue("Age");
-           String sex = kvList.getValue("SEX");
-          
-           /*
-           		Incase we decide to include weight into out XML
-				String weightString = kvList.getValue("Weight");
-           	*/
-
-
+           String sex = kvList.getValue("Sex");
+    
            int syst = 0, dias = 0, age = 0;
             
            if (systString != null && !systString.equals(""))
@@ -532,28 +492,15 @@ public class CreateBloodPressure {
                }
            }
 
-           /* Function to be commented out if we include weight
-           if (weightString != null && !weightString.equals(""))
-           {
-               try
-               {
-                   weight = Integer.parseInt(weightString);
-               }
-               catch(Exception e)
-               {
-                   weight = 0;
-               }
-           }
-           */
-
            //contains the knowledge base which does the necessary calculations
            boolean emer = componentTask(syst,dias,age,sex);
+           
            if(emer == true){
                
-               //I believe that we should send an alert message to the doctor whenever there is an
-               //emergency. The SIS server handles the messages differently in CreateUploader.java
-               //If we only send an emergency, the readings are not passed through the message function, 
-               //and if we only send alert, then the note/emergency message is not passed to the "database"
+           //I believe that we should send an alert message to the doctor whenever there is an
+           //emergency. The SIS server handles the messages differently in CreateUploader.java
+           //If we only send an emergency, the readings are not passed through the message function, 
+           //and if we only send alert, then the note/emergency message is not passed to the "database".
            
            System.out.println("========= Sending  out Emergency message =========");
            //We can be pretty and print out the emergency message in our terminal
@@ -567,7 +514,7 @@ public class CreateBloodPressure {
              System.out.println("Error Sending Emergency Message.");
              }
 
-           System.out.println("========= Sending Reading To Your Doctor =========");
+           System.out.println("========= Sending Reading To Your Doctor =========\n");
            //We can be pretty and print out the alert message in our terminal
            alert.putPair("Systolic", Integer.toString(syst));
            alert.putPair("Diastolic", Integer.toString(dias));
@@ -578,7 +525,7 @@ public class CreateBloodPressure {
            try{
                encoder.sendMsg(alert);
             }catch(IOException ioe){
-             System.out.println("Error Sending Alert Message.");
+             System.out.println("Error Sending Alert Message.\n");
              }
 
           }
@@ -592,7 +539,7 @@ public class CreateBloodPressure {
 
            if(s.equals("y")){
             
-           System.out.println("========= Sending Reading To Your Doctor =========");
+           System.out.println("\n========= Sending Reading To Your Doctor =========");
            //We can be pretty and print out the alert message in our terminal
            alert.putPair("Systolic", Integer.toString(syst));
            alert.putPair("Diastolic", Integer.toString(dias));
@@ -601,13 +548,13 @@ public class CreateBloodPressure {
            try{
                encoder.sendMsg(alert);
             }catch(IOException ioe){
-             System.out.println("Error Sending Alert Message.");
+             System.out.println("Error Sending Alert Message.\n");
              }
-            System.out.println("========= Thank You For Checking Your BloodPressure =========");
+            System.out.println("========= Thank You For Checking Your BloodPressure =========\n");
            }
            else{
                System.out.println("========= Thank You For Checking Your BloodPressure =========");
-               System.out.println("========= Please Keep Track of Your BloodPressure for Future Reference =========");
+               System.out.println("========= Please Keep Track of Your BloodPressure for Future Reference =========\n");
            }
 
        }
@@ -677,7 +624,7 @@ public class CreateBloodPressure {
                             }
                         }
                     }, startDate, refreshRate);*/
-                    System.out.println("Algorithm Activated");
+                    System.out.println("Algorithm Activated\n");
                     break;
 
                 case "Kill":
